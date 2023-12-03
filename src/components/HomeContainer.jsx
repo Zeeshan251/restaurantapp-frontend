@@ -31,10 +31,7 @@ const HomeContainer = () => {
         </p>
 
         <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore,
-          rerum. Quisquam, quaerat maxime ipsam numquam necessitatibus, dolorem
-          placeat in fugit architecto obcaecati quia! Vel molestias, iure
-          aspernatur quas quidem eaque!
+        Innovative and dynamic, our team is committed to delivering unparalleled solutions that redefine possibilities. With a passion for excellence, we embark on every project with creativity and dedication. Our unwavering commitment to quality and customer satisfaction sets us apart. Join us on a journey where ideas flourish, and aspirations transform into reality.
         </p>
 
         <button

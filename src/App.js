@@ -6,6 +6,13 @@ import { AnimatePresence } from "framer-motion";
 import { useStateValue } from "./context/StateProvider";
 import { getAllFoodItems } from "./utils/firebaseFunctions";
 import { actionType } from "./context/Reducer";
+import Footer from "./components/Footer";
+import Menu from './components/Menu';
+import Aboutus from './components/Aboutus'
+import ContactUs from './components/ContactUs'
+import Footer2 from "./components/Footer2";
+import Cities from "./components/Cities";
+
 
 const App = () => {
 
@@ -23,6 +30,8 @@ const App = () => {
 
   useEffect(()=>{fetchData()}, [])
 
+  // console.log(foodItems);
+
 
 
   return (
@@ -33,8 +42,13 @@ const App = () => {
           <Routes>
             <Route path="/*" element={<MainContainer />} />
             <Route path="/createItem" element={<CreateContainer />} />
+            <Route path="/menu" element={<Menu items = {foodItems}/>} />
+            <Route path="/aboutus" element={<Aboutus/>} />
+            <Route path="/contact" element={<ContactUs/>} />
           </Routes>
         </main>
+        <Cities/>
+        <Footer2/>
       </div>
     </AnimatePresence>
   );

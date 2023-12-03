@@ -51,15 +51,21 @@ const CartItem = ({ item, setFlag, flag }) => {
     items = cartItems;
   }, [qty, items]);
 
+
+  const removeItem = (id) => {
+    items = cartItems.filter((item) => item.id !== id);
+    setFlag(flag + 1);
+    cartDispatch();
+  };
+
   return (
-    <div className="w-full p-1 px-2 rounded-lg bg-cartItem flex items-center gap-2">
+    <div className="w-full p-1 px-2 rounded-lg bg-cartItem flex items-center gap-2 justify-between">
       <img
         src={item?.imageURL}
         className="w-20 h-20 max-w-[60px] rounded-full object-contain"
         alt=""
       />
 
-      {/* name section */}
       <div className="flex flex-col gap-2">
         <p className="text-base text-gray-50">{item?.title}</p>
         <p className="text-sm block text-gray-300 font-semibold">
@@ -67,8 +73,9 @@ const CartItem = ({ item, setFlag, flag }) => {
         </p>
       </div>
 
-      {/* button section */}
+      <div className="flex flex-col items-center gap-3 ">
       <div className="group flex items-center gap-2 ml-auto cursor-pointer">
+        
         <motion.div
           whileTap={{ scale: 0.75 }}
           onClick={() => updateQty("remove", item?.id)}
@@ -86,6 +93,16 @@ const CartItem = ({ item, setFlag, flag }) => {
         >
           <BiPlus className="text-gray-50 " />
         </motion.div>
+        </div>
+        <div>
+        <motion.div
+          className="cursor-pointer"
+          whileTap={{ scale: 0.75 }}
+          onClick={() => removeItem(item?.id)}
+        >
+          <span className="text-gray-50">Remove</span>
+        </motion.div>
+      </div>
       </div>
     </div>
   );
