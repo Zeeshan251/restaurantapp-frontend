@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MdShoppingBasket } from "react-icons/md";
-import CartContainer from "./CartContainer";
+// import CartContainer from "./CartContainer";
 
 const Menuitems = ({ title, category, price, calories, imageURL, id }) => (
   <>
@@ -47,21 +47,6 @@ const Menuitems = ({ title, category, price, calories, imageURL, id }) => (
 );
 
 const Menu = ({ items }) => {
-  // const [itemss, setitemss] = useState([]);
-
-  // const [{ cartitemss }, dispatch] = useStateValue();
-
-  // const addtocart = () => {
-  //   dispatch({
-  //     type: actionType.SET_CARTitemsS,
-  //     cartitemss: itemss,
-  //   });
-  //   localStorage.setitems("cartitemss", JSON.stringify(itemss));
-  // };
-
-  // useEffect(() => {
-  //   addtocart();
-  // }, [itemss]);
 
   if (!items) {
     return (
@@ -93,15 +78,10 @@ const Menu = ({ items }) => {
 
       {sortedCategories.map(([category, categoryitems]) => (
         <div key={category} className="mb-8 flex gap-12 flex-wrap flex-col">
-          {/* <h3 className="text-3xl font-light mb-4 text-gray-600 relative inline-block">
-            <span className="border-b-2 border-gray-400 pb-2 pr-4">
-              Category: {category}
-            </span>
-          </h3> */}
 
           <h3 className="text-3xl font-semibold mb-4 text-headingColor relative inline-block">
             <span className="border-b-2 border-gradient pb-2 pr-4">
-              Category: {category}
+              {category}
             </span>
           </h3>
 

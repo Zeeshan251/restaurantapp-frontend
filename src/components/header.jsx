@@ -25,8 +25,6 @@ const Header = () => {
 
   const [isMenu, setIsMenu] = useState(false);
 
-
-
   const login = async () => {
     if (!user) {
       const {
